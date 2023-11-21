@@ -75,4 +75,6 @@ performed CRUD  operations on cover type
 -index view
 -updsert view
 -delete covertype 
+made new class in .models called Prodcut
+i have add the code that you have proveid to us 
    
