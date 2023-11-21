@@ -84,3 +84,4 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
  addValidationToProduct add to commend line and also ot worked 
  and now have connneted the product to iUnitOFwork and unitofwork and also add the code i need for 
  i have add a Prodcutcontoller to contoller file and type the code 
+ after i finshed the prodecontoller i have made a new cs in viewmodel called product and used the code 
