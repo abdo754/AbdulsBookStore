@@ -77,4 +77,4 @@ performed CRUD  operations on cover type
 -delete covertype 
 made new class in .models called Prodcut
 i have add the code that you have proveid to us 
-   
+added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs 
