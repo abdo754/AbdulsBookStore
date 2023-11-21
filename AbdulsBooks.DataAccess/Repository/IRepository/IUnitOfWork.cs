@@ -9,6 +9,7 @@ namespace AbdulsBooks.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         ICoverTypeRepository CoverType { get; }
         ISP_Call SP_Call { get; }
+        IProductRepository Product { get; }
 
         void Save();
     }
