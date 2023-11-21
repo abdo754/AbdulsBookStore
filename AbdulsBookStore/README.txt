@@ -82,3 +82,4 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 
  i have made   [Required] to Title,ISBN,Author
  addValidationToProduct add to commend line and also ot worked 
+ and now have connneted the product to iUnitOFwork and unitofwork and also add the code i need for 
