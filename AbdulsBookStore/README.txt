@@ -86,3 +86,4 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
  i have add a Prodcutcontoller to contoller file and type the code 
  after i finshed the prodecontoller i have made a new cs in viewmodel called product and used the code 
  i have modfiy the ProductContoller 
+ added a new link in layout and also made a file for prodect for it and aslo that was prodvied 
