@@ -1,4 +1,4 @@
-﻿@model AbdulsBooks.Models.ProductVM;
+﻿@model AbdulsBooks.Models.ViewModels.ProductVM;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     var title = "Create Product";
@@ -7,7 +7,7 @@
 <form method="post" enctype="multipart/form-data">
     <div class="row p-3 border">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @if (Model.Product.Id != 0)    
+        @if (Model.Product.Id != 0)
         {
             // edit
             title = "Edit Product";
@@ -141,6 +141,6 @@
             if (document.getElementById("uploadBox").value = "") {
                 swal("Error", "Please select an image", "error");
                 return false;
-        }
+            }
     </script>
 }

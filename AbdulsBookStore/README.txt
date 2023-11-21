@@ -88,4 +88,5 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
  i have modfiy the ProductContoller 
  added a new link in layout and also made a file for prodect for it and aslo that was prodvied 
  i have started phase 3 and which by add a product file and what it needs 
- problem in upsert in the using name 
+ problem in upsert in the using name
+ i have fix the probelm by uing viewmodels
