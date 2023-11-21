@@ -78,3 +78,4 @@ performed CRUD  operations on cover type
 made new class in .models called Prodcut
 i have add the code that you have proveid to us 
 added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs 
+"add-migration addProductToDb" in the program and it worked 9:36Am
