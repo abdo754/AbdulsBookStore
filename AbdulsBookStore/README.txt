@@ -94,9 +94,12 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 
  Aissgnment 2 part -IV
 
- 5:40 11/23/2023
+ 5:40PM 11/23/2023
 
- 5:48 i have add price, price50 and also price100 to Products.cs in Models.
-
-
-
+ 5:48PM  i have add price, price50 and also price100 to Products.cs in Models.
+ 5:57PM i have openedup SD.cs which was Utility folder and add this 
+        public const string Proc_CoverType_Create = "usp_CreateCoverType";
+        public const string Proc_CoverType_Get = "usp_GetCoverType";
+        public const string Proc_CoverTyp_GetAll = "usp_GetCoverType";
+        public const string Proc_CoverTyp__Update = "usp_UpdateCoverType";
+        public const string Proc_CoverTyp_Delete = "usp_DeleteCoverType";
