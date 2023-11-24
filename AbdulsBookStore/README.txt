@@ -103,3 +103,5 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
         public const string Proc_CoverTyp_GetAll = "usp_GetCoverType";
         public const string Proc_CoverTyp__Update = "usp_UpdateCoverType";
         public const string Proc_CoverTyp_Delete = "usp_DeleteCoverType";
+
+6:09  i have adjuted the ProductController for an updsert to make add images path for it to accuess 
