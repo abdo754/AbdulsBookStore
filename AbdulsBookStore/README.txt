@@ -107,3 +107,4 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 6:09  i have adjuted the ProductController for an updsert to make add images path for it to accuess 
 6:34 i have add new update list in upsert in Prduct folder(Price50)
 6:41 styling the list Upsert images url
+6:45 changes view(by add a list) things in Index in Product folder 
