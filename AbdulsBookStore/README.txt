@@ -96,5 +96,7 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 
  5:40 11/23/2023
 
+ 5:48 i have add price, price50 and also price100 to Products.cs in Models.
+
 
 
