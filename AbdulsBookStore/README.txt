@@ -90,3 +90,11 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
  i have started phase 3 and which by add a product file and what it needs 
  problem in upsert in the using name
  i have fix the probelm by uing viewmodels
+
+
+ Aissgnment 2 part -IV
+
+ 5:40 11/23/2023
+
+
+
