@@ -9,9 +9,10 @@ namespace AbdulsBooks.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
 
         [Display(Name = "CoverType Name")]
-        [Required]
+     
         [MaxLength(50)]
 
         public string Name { get; set; }
