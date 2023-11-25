@@ -108,3 +108,6 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 6:34 i have add new update list in upsert in Prduct folder(Price50)
 6:41 styling the list Upsert images url
 6:45 changes view(by add a list) things in Index in Product folder 
+
+11/24/2023
+1:44PM i have commeted out   /*_db.SaveChanges();*/ in CatgoryRepository 
