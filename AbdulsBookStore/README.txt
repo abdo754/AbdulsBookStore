@@ -114,3 +114,4 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 11:53 i have comment out the for covertype and productReposroty because it was extria and add prduct in UnitOfWork
 1:56 there was an error in CoverType but now is fixed becuase now i have changed the IReposirtoty 
 2:06 changed the postion for    [Required] in covertype in viewModels 
+2:12 i have changed few thing in covertype contoller which is for add id  

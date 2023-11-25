@@ -1,5 +1,7 @@
 ﻿using AbdulsBooks.DataAccess.Repository.IRepository;
 using AbdulsBooks.Models;
+using AbdulsBooks.Utility;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 namespace AbdulsBookStore.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CoverTypeController : Controller 
+    public class CoverTypeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -17,6 +19,7 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -24,18 +27,21 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
 
         public IActionResult Upsert(int? id)
         {
-            CoverType covertype = new CoverType(); 
+            CoverType coverType = new CoverType();
             if (id == null)
             {
-                return View(covertype);
+                // this is for create
+                return View(coverType);
             }
-
-            covertype = _unitOfWork.CoverType.Get(id.GetValueOrDefault());
-            if (covertype == null)
+            // this is for edit
+            var parameter = new DynamicParameters();
+            parameter.Add("@Id", id);
+            coverType = _unitOfWork.SP_Call.OneRecord<CoverType>(SD.Proc_CoverType_Get, parameter);
+            if (coverType == null)
             {
                 return NotFound();
             }
-            return View(covertype);
+            return View(coverType);
         }
 
 
