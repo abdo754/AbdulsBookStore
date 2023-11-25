@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace AbdulsBooks.DataAccess.Repository
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
         private readonly ApplicationDbContext _db;
 
-        public ProductRepository(ApplicationDbContext db)
+        public ProductRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Add(Product product)
+/*        public void Add(Product product)
         {
             _db.Products.Add(product);
         }
@@ -56,7 +56,7 @@ namespace AbdulsBooks.DataAccess.Repository
         {
             _db.SaveChanges();
         }
-
+*/
         public void Update(Product product)
         {
             var objFromDb = _db.Products.FirstOrDefault(s => s.Id == product.Id);
@@ -71,6 +71,9 @@ namespace AbdulsBooks.DataAccess.Repository
                 objFromDb.ISBN = product.ISBN;
                 objFromDb.Author = product.Author;
                 objFromDb.ListPrice = product.ListPrice;
+                objFromDb.Price = product.Price;
+                objFromDb.Price50 = product.Price50;
+                objFromDb.Price100 = product.Price100;
                 objFromDb.CategoryId = product.CategoryId;
                 objFromDb.CoverTypeId = product.CoverTypeId;
             }

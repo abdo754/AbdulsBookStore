@@ -22,7 +22,7 @@ namespace AbdulsBooks.DataAccess.Repository
             if (objFromDb != null)
             {
                 objFromDb.Name = covertype.Name;
-                _db.SaveChanges();
+                /*_db.SaveChanges();*/
             }
         }
     }

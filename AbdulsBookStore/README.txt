@@ -110,4 +110,5 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 6:45 changes view(by add a list) things in Index in Product folder 
 
 11/24/2023
-1:44PM i have commeted out   /*_db.SaveChanges();*/ in CatgoryRepository 
+1:44PM i have commeted out   /*_db.SaveChanges();*/ in Resposiotry folders ONLY
+11:53 i have comment out the for covertype and productReposroty because it was extria and add prduct in UnitOfWork
