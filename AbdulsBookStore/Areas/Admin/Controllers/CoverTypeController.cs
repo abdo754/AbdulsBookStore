@@ -48,23 +48,26 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public IActionResult Upsert(CoverType covertype)
+        public IActionResult Upsert(CoverType coverType)
         {
             if (ModelState.IsValid)
             {
-                if (covertype.Id == 0)
-                {
-                    _unitOfWork.CoverType.Add(covertype);
+                var parameter = new DynamicParameters();
+                parameter.Add("@Name", coverType.Name);
 
+                if (coverType.Id == 0)
+                {
+                    _unitOfWork.SP_Call.Execute(SD.Proc_CoverType_Create, parameter);
                 }
                 else
                 {
-                    _unitOfWork.CoverType.Update(covertype);
+                    parameter.Add("@Id", coverType.Id);
+                    _unitOfWork.SP_Call.Execute(SD.Proc_CoverType_Update, parameter);
                 }
                 _unitOfWork.Save();
                 return RedirectToAction(nameof(Index));
             }
-            return View(covertype);
+            return View(coverType);
         }
 
         //API calls here

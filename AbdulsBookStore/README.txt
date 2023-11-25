@@ -115,3 +115,5 @@ added "public DbSet<Product> Products { get; set;} " to ApplictionDbContext.cs
 1:56 there was an error in CoverType but now is fixed becuase now i have changed the IReposirtoty 
 2:06 changed the postion for    [Required] in covertype in viewModels 
 2:12 i have changed few thing in covertype contoller which is for add id  
+2:17 error some how covertype is no in SD 
+2:18 there was a miss type on sd so on covertypeupdate did not work but now is fix 
