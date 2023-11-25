@@ -120,3 +120,7 @@ controller CoverType
 2:17 error some how covertype is no in SD 
 2:18 there was a miss type on sd so on covertypeupdate did not work but now is fix 
 2:21 edited the delete which for id 
+
+controller Product 
+2:56 there is a lot error in productContoller becuase they are not edited yet 
+3:02 editd void update in IProdeuct AND edit Delete in ProductController 

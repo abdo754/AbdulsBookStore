@@ -9,12 +9,13 @@ namespace AbdulsBooks.DataAccess.Repository.IRepository
 {
     public interface IProductRepository : /*IDisposable*/IRepository<Product>
     {
-      /*  IEnumerable<Product> GetAll(string includeProperties);
-        Product GetById(int id);
-        void Add(Product product);
+        /*  IEnumerable<Product> GetAll(string includeProperties);
+          Product GetById(int id);
+          void Add(Product product);
+          void Update(Product product);
+          void Remove(int id);
+          void Save();
+          Product Get(int id);*/
         void Update(Product product);
-        void Remove(int id);
-        void Save();
-        Product Get(int id);*/
     }
 }
