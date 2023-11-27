@@ -124,3 +124,6 @@ controller CoverType
 controller Product 
 2:56 there is a lot error in productContoller becuase they are not edited yet 
 3:02 editd void update in IProdeuct AND edit Delete in ProductController 
+
+5:58 11/27/2023
+
