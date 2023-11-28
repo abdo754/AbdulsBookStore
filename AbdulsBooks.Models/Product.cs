@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 
 namespace AbdulsBooks.Models
@@ -20,17 +22,11 @@ namespace AbdulsBooks.Models
         public string Author { get; set; }
 
         [Required]
-        [Range(1,10000)]
-        public double ListPrice { get; set; }
-        [Required]
         [Range(1, 10000)]
         public double Price { get; set; }
         [Required]
         [Range(1, 10000)]
-        public double Price50 { get; set; }
-        [Required]
-        [Range(1, 10000)]
-        public double Price100 { get; set; }
+        
         public string ImageUrl { get; set; }
 
         [Required]
@@ -40,7 +36,7 @@ namespace AbdulsBooks.Models
         
         [Required]
         public int CoverTypeId { get; set; }
-        [ForeignKey("CategoryId")]
+        [ForeignKey("CoverTypeId")]
         public CoverType CoverType { get; set; }
 
 

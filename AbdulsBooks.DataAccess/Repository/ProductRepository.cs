@@ -70,10 +70,7 @@ namespace AbdulsBooks.DataAccess.Repository
                 objFromDb.Description = product.Description;
                 objFromDb.ISBN = product.ISBN;
                 objFromDb.Author = product.Author;
-                objFromDb.ListPrice = product.ListPrice;
                 objFromDb.Price = product.Price;
-                objFromDb.Price50 = product.Price50;
-                objFromDb.Price100 = product.Price100;
                 objFromDb.CategoryId = product.CategoryId;
                 objFromDb.CoverTypeId = product.CoverTypeId;
             }
