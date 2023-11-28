@@ -66,7 +66,7 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
                 if (files.Count > 0)
                 {
                     string fileName = Guid.NewGuid().ToString();
-                    var uploads = Path.Combine(webRootPath, @"images\products");
+                    var uploads = Path.Combine(webRootPath, @"images");
                     var extension = Path.GetExtension(files[0].FileName);
 
                     if (productVM.Product.ImageUrl != null)
@@ -82,7 +82,7 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
                     {
                         files[0].CopyTo(filesStreams);
                     }
-                    productVM.Product.ImageUrl = @"\images\products\" + fileName + extension;
+                    productVM.Product.ImageUrl = @"\images" + fileName + extension;
                 }
                 else
                 {

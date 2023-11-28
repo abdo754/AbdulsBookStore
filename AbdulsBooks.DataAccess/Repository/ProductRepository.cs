@@ -18,45 +18,6 @@ namespace AbdulsBooks.DataAccess.Repository
             _db = db;
         }
 
-/*        public void Add(Product product)
-        {
-            _db.Products.Add(product);
-        }
-
-        public void Dispose()
-        {
-            _db.Dispose();
-        }
-
-        public Product Get(int id)
-        {
-            return _db.Products.FirstOrDefault(p => p.Id == id);
-        }
-
-        public IEnumerable<Product> GetAll(string includeProperties)
-        {
-            return _db.Products.ToList();
-        }
-
-        public Product GetById(int id)
-        {
-            return _db.Products.FirstOrDefault(p => p.Id == id);
-        }
-
-        public void Remove(int id)
-        {
-            var product = _db.Products.Find(id);
-            if (product != null)
-            {
-                _db.Products.Remove(product);
-            }
-        }
-
-        public void Save()
-        {
-            _db.SaveChanges();
-        }
-*/
         public void Update(Product product)
         {
             var objFromDb = _db.Products.FirstOrDefault(s => s.Id == product.Id);
@@ -73,6 +34,7 @@ namespace AbdulsBooks.DataAccess.Repository
                 objFromDb.Price = product.Price;
                 objFromDb.CategoryId = product.CategoryId;
                 objFromDb.CoverTypeId = product.CoverTypeId;
+            
             }
         }
     }
