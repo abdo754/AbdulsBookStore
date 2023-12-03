@@ -129,18 +129,24 @@
             menubar: false
         });
 
-        function validateInput() {
-            var descriptionValue = tinymce.get('description').getContent();
-            if (!descriptionValue.trim()) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Description is required',
-                    text: 'Please enter a description for the product.',
-                });
-                return false;
-            }
-            return true;
-        }
+    function validateInput() {
+    var descriptionValue = tinymce.get('description').getContent();
+    if (!descriptionValue.trim()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Description is required',
+            text: 'Please enter a description for the product.',
+        });
+        return false;
+    }
+
+    if (document.getElementById("uploadBox").value === "") {
+        swal("Error", "Please select an image", "error");
+        return false;
+    }
+
+    return true;
+}
 
         function validateInput() {
 

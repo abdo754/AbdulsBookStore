@@ -11,7 +11,7 @@ namespace AbdulsBooks.DataAccess.Migrations
                 table: "Products");
 
             migrationBuilder.RenameColumn(
-                name: "ListPrice",
+                name: "Price",
                 table: "Products",
                 newName: "Price");
 
@@ -52,7 +52,7 @@ namespace AbdulsBooks.DataAccess.Migrations
             migrationBuilder.RenameColumn(
                 name: "Price",
                 table: "Products",
-                newName: "ListPrice");
+                newName: "Price");
 
             migrationBuilder.AlterColumn<string>(
                 name: "ImageUrl",

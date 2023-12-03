@@ -130,4 +130,6 @@ controller Product
 
 12/3/2023
  i can not create e book when a press create it does't do anything i have no idea why. 
+ and for some reason it does not want to update?
+ i found the promloem which was the spelling listprice to to price in product so one mistake gone 
 
