@@ -135,5 +135,11 @@ controller Product
 
  12/3/2023
 
- i tried to updated the button for updsert but still it does not work but i know the mistake is in the updsert because everthhing is linked but when the button for some reason it does not wor??
+ i tried to updated the button for updsert but still it does not work but i know the mistake is in the updsert because everthhing is linked but when the button for some reason it does not work??
+
+
+ 12/4/2023
+ 11:12
+
+ 11:29AM I have dropdowm the promelm in javs 
 
