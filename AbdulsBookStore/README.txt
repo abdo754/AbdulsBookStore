@@ -133,3 +133,7 @@ controller Product
  and for some reason it does not want to update?
  i found the promloem which was the spelling listprice to to price in product so one mistake gone 
 
+ 12/3/2023
+
+ i tried to updated the button for updsert but still it does not work but i know the mistake is in the updsert because everthhing is linked but when the button for some reason it does not wor??
+
