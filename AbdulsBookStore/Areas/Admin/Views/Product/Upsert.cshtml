@@ -4,7 +4,7 @@
     var title = Model.Product.Id != 0 ? "Edit Product" : "Create Product";
 }
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" id="productForm">
     <div class="row p-3 border">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @if (Model.Product.Id != 0)
@@ -119,32 +119,31 @@
     <script src="https://cdn.tiny.cloud/1/n94ifuzvl80pchikopiwgz2esrw8n28dwcywvpejlqrregfp/tinymce/5/tinymce.min.js"></script>
 
     <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'lists',
-            menubar: 'file edit format'
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            tinymce.init({
+                selector: 'textarea',
+                plugins: 'lists',
+                menubar: 'file edit format'
+            });
 
-        document.getElementById('productForm').addEventListener('submit', function (event) {
-            if (!validateInput()) {
-                event.preventDefault(); // Prevent form submission
+            var form = document.getElementById('productForm');
+            form.addEventListener('submit', function(event) {
+                if (!validateInput()) {
+                    event.preventDefault();
+                }
+            });
+
+            function validateInput() {
+                var isValid = true;
+                var uploadBox = document.getElementById("uploadBox");
+
+                if (uploadBox && uploadBox.files.length === 0 && !@Model.Product.Id) {
+                    swal("Error", "Please select an image", "error");
+                    isValid = false;
+                }
+
+                return isValid;
             }
         });
-
-        function validateInput() {
-            // Check for empty fields or other validation rules
-            var isValid = true;
-            var uploadBoxValue = document.getElementById("uploadBox").value;
-
-            if (uploadBoxValue == "") {
-                swal("Error", "Please select an image", "error");
-                isValid = false;
-            }
-
-            // Add other validation checks as needed
-
-            return isValid;
-        }
     </script>
-}
 }

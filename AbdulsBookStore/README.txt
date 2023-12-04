@@ -142,4 +142,5 @@ controller Product
  11:12
 
  11:29AM I have dropdowm the promelm in javs 
+ 12:19 i have still no idea why is not working but i will gave another try later 
 
