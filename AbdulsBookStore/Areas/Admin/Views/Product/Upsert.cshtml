@@ -1,7 +1,7 @@
 ﻿@model AbdulsBooks.Models.ViewModels.ProductVM;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var title = Model.Product.Id != 0 ? "Edit Product" : "Create Product";
+    var title = "Create Product";
 }
 
 <form method="post" enctype="multipart/form-data" id="productForm">
@@ -111,7 +111,13 @@
                     }
                 </div>
             </div>
-            <!-- Other existing HTML code remains unchanged -->
+            @if (Model.Product.Id != 0)
+            {
+                <div class="col-3 offset-1 pt-4">
+                    <img src="@Model.Product.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                </div>
+            }
+        </div>
 </form>
 
 @section Scripts{
@@ -119,31 +125,21 @@
     <script src="https://cdn.tiny.cloud/1/n94ifuzvl80pchikopiwgz2esrw8n28dwcywvpejlqrregfp/tinymce/5/tinymce.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            tinymce.init({
-                selector: 'textarea',
-                plugins: 'lists',
-                menubar: 'file edit format'
-            });
 
-            var form = document.getElementById('productForm');
-            form.addEventListener('submit', function(event) {
-                if (!validateInput()) {
-                    event.preventDefault();
-                }
-            });
-
-            function validateInput() {
-                var isValid = true;
-                var uploadBox = document.getElementById("uploadBox");
-
-                if (uploadBox && uploadBox.files.length === 0 && !@Model.Product.Id) {
-                    swal("Error", "Please select an image", "error");
-                    isValid = false;
-                }
-
-                return isValid;
-            }
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
         });
+
+
+        function validateInput() {
+            if (document.getElementById("uploadBox").value == "") {
+                swal("Error", "Please select an image", "error");
+                return false;
+            }
+            return true;
+        }
+
     </script>
 }
