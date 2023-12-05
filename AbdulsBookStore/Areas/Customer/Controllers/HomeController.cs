@@ -1,9 +1,8 @@
-﻿using AbdulsBookStore.Models;
+﻿using AbdulsBooks.DataAccess.Repository.IRepository;
+using AbdulsBooks.Models;
 using AbdulsBookStore.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using AbdulsBooks.Models;
-using AbdulsBooks.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,19 +15,19 @@ namespace AbdulsBookStore.Area.Customer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unifOfWork;
 
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unifOfWork)
         {
             _logger = logger;
-            _unitOfWork = unitOfWork;
+            _unifOfWork = unifOfWork;
 
         }
 
         public IActionResult Index()
         {
-            /*return View();*/
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            /* return View();*/
+            IEnumerable<Product> productList = _unifOfWork.Product.GetAll(includeProperties: "Category,CoverType");
             return View(productList);
         }
 

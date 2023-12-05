@@ -28,6 +28,7 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
         {
             return View();
         }
+
         public IActionResult Upsert(int? id)
         {
             ProductVM productVM = new ProductVM()
@@ -42,12 +43,14 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
-                }),
+                })
             };
             if (id == null)
             {
+                // this is for create
                 return View(productVM);
             }
+            // this is for edit
             productVM.Product = _unitOfWork.Product.Get(id.GetValueOrDefault());
             if (productVM.Product == null)
             {
@@ -55,6 +58,27 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
             }
             return View(productVM);
         }
+
+        /*[HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                if (product.Id == 0)
+                {
+                    _unitOfWork.Product.Add(product);
+                }
+                else
+                {
+                    _unitOfWork.Product.Update(product);
+                }
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(product);
+        }*/
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(ProductVM productVM)
@@ -66,7 +90,7 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
                 if (files.Count > 0)
                 {
                     string fileName = Guid.NewGuid().ToString();
-                    var uploads = Path.Combine(webRootPath, @"\images\products\");
+                    var uploads = Path.Combine(webRootPath, @"images\products");
                     var extension = Path.GetExtension(files[0].FileName);
 
                     if (productVM.Product.ImageUrl != null)
@@ -126,6 +150,8 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
         }
 
         #region API CALLS
+
+        [HttpGet]
         public IActionResult GetAll()
         {
             var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
@@ -152,5 +178,6 @@ namespace AbdulsBookStore.Areas.Admin.Controllers
         }
 
         #endregion
+
     }
 }

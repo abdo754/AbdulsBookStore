@@ -26,14 +26,14 @@ namespace AbdulsBooks.Models
         public double Price { get; set; }
         [Required]
         [Range(1, 10000)]
-        
+
         public string ImageUrl { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
-        
+
         [Required]
         public int CoverTypeId { get; set; }
         [ForeignKey("CoverTypeId")]

@@ -1,10 +1,10 @@
-﻿@model AbdulsBooks.Models.ViewModels.ProductVM;
+﻿@model AbdulsBooks.Models.ViewModels.ProductVM
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     var title = "Create Product";
 }
 
-<form method="post" enctype="multipart/form-data" id="productForm">
+<form method="post" enctype="multipart/form-data">
     <div class="row p-3 border">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @if (Model.Product.Id != 0)
@@ -53,7 +53,6 @@
                     <span asp-validation-for="Product.Author" class="text-danger"></span>
                 </div>
             </div>
-            <!-- Price -->
             <div class="form-group row">
                 <div class="col-4">
                     <label asp-for="Product.Price"></label>
@@ -63,7 +62,6 @@
                     <span asp-validation-for="Product.Price" class="text-danger"></span>
                 </div>
             </div>
-            <!-- Category -->
             <div class="form-group row">
                 <div class="col-4">
                     Category
@@ -102,7 +100,7 @@
                     {
                         <div class="row">
                             <div class="col">
-                                <button type="submit" class="btn btn-primary form-control">Create</button>
+                                <button type="submit" onclick="return validateInput()" class="btn btn-primary form-control">Create</button>
                             </div>
                             <div class="col">
                                 <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
@@ -111,13 +109,14 @@
                     }
                 </div>
             </div>
-            @if (Model.Product.Id != 0)
-            {
-                <div class="col-3 offset-1 pt-4">
-                    <img src="@Model.Product.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
-                </div>
-            }
         </div>
+        @if (Model.Product.Id != 0)
+        {
+            <div class="col-3 offset-1 pt-4">
+                <img src="@Model.Product.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+            </div>
+        }
+    </div>
 </form>
 
 @section Scripts{
@@ -125,14 +124,11 @@
     <script src="https://cdn.tiny.cloud/1/n94ifuzvl80pchikopiwgz2esrw8n28dwcywvpejlqrregfp/tinymce/5/tinymce.min.js"></script>
 
     <script>
-
         tinymce.init({
             selector: 'textarea',
             plugins: 'lists',
             menubar: 'file edit format'
         });
-
-
         function validateInput() {
             if (document.getElementById("uploadBox").value == "") {
                 swal("Error", "Please select an image", "error");
@@ -140,6 +136,6 @@
             }
             return true;
         }
-
     </script>
 }
+

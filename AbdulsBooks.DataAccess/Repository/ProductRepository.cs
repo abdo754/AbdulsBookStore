@@ -27,6 +27,7 @@ namespace AbdulsBooks.DataAccess.Repository
                 {
                     objFromDb.ImageUrl = product.ImageUrl;
                 }
+
                 objFromDb.Title = product.Title;
                 objFromDb.Description = product.Description;
                 objFromDb.ISBN = product.ISBN;
@@ -34,7 +35,6 @@ namespace AbdulsBooks.DataAccess.Repository
                 objFromDb.Price = product.Price;
                 objFromDb.CategoryId = product.CategoryId;
                 objFromDb.CoverTypeId = product.CoverTypeId;
-            
             }
         }
     }
